@@ -98,7 +98,7 @@ function area(a, b, c) {
 
 
 if (firstSide > 0 && secondSide > 0 && thirdSide > 0) {
-    area(firstSide, secondSide, thirdSide)
+    area(Number(firstSide), Number(secondSide), Number(thirdSide))
 } else { console.log('Incorrect data') };
 
 // task 7

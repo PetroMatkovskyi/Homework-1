@@ -1,14 +1,22 @@
 // task1
 
-let openTab = window.open(
-  'https://www.w3schools.com',
-  'w3schools',
-  'width=300,height=300'
-);
+let openTab = window.open('', '', 'width=300,height=300'),
+  timeout = setInterval(changeWindow(), 2000);
 
-setTimeout(() => {
-  openTab.resizeTo(500, 500);
-}, 2000);
+function changeWindow() {
+  let count = 1;
+  return function () {
+    if (count === 1) {
+      openTab.resizeTo(500, 500);
+    } else if (count === 2) {
+      openTab.moveTo(200, 200);
+    } else if (count === 3) {
+      openTab.close();
+      clearInterval(timeout);
+    }
+    count++;
+  };
+}
 
 // task 2
 
